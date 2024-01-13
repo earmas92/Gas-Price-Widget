@@ -1,5 +1,8 @@
 {
   "name": "gas-price",
+  "engines": {
+    "node": ">=14.19.1"
+  },
   "version": "1.0.0",
   "description": "Read Me",
   "type": "module",
