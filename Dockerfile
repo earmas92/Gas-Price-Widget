@@ -4,6 +4,9 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
+# Install git (required by some npm packages)
+RUN apk add --no-cache git
+
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
