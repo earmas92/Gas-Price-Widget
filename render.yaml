@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: gas-price-api
+    env: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health/live
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GASBUDDY_API_URL
+        value: https://www.gasbuddy.com/graphql
+      - key: GASBUDDY_CSRF_TOKEN
+        value: 1.ZZjgVN9S4RtbF6zO
+      - key: GASBUDDY_REFERER
+        value: https://www.gasbuddy.com/home
+      - key: USER_AGENT
+        value: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+      - key: REQUEST_TIMEOUT
+        value: 15000
+      - key: RATE_LIMIT_MAX
+        value: 100
+      - key: RATE_LIMIT_WINDOW
+        value: 900000
+      - key: ALLOWED_ORIGINS
+        value: "*"
